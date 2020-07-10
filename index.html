@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serwis Aukcyjny Pieców Wędzarniczych</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: white;
+            color: rgb(15, 50, 95);
+            font-family: 'Fjalla One', sans-serif;
+            font-size: 25px;
+        }
+
+        main {
+            width: 800px;
+            margin: auto;
+            text-align: center;
+        }
+
+        div {
+            margin: auto;
+            border: 2px solid #6520c0;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        #slider {
+            position: relative;
+            height: 600px;
+            background-size: cover;
+        }
+
+        img {
+            width: 600px;
+        }
+
+        button {
+            position: absolute;
+            top: 45%;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            font-size: 35px;
+            padding: 16px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+
+        }
+
+        #lewy {
+            left: 0%;
+        }
+
+        #prawy {
+            right: 0%;
+        }
+    </style>
+    <script src="jquery-3.5.1.js"></script>
+    <script>
+        let obrazki = ['grafiki/wędzarna1.jpg', 'grafiki/wędzarnia.jpg', 'grafiki/wędzarnie2.jpg']
+        let aktualny = 0
+        $(document).ready(function () {
+            $("#slider").css("background-image", "url(" + obrazki[aktualny] + ")");
+            $("#lewy").click(function () {
+                if (aktualny > 0) aktualny -= 1;
+                $("#slider").css("background-image", "url(" + obrazki[aktualny] + ")");
+            })
+            $("#prawy").click(function () {
+                if (aktualny < obrazki.length - 1) aktualny += 1;
+                $("#slider").css("background-image", "url(" + obrazki[aktualny] + ")");
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <main>
+        <h1>Serwis Aukcyjny Pieców Wędzarniczych - Informacje</h1>
+        <div>
+            Jak zrobić własny piec
+        </div>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/o0qebXTWbLk" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+        <div>
+            <a href="https://thelamagamming1.github.io/serwisaukcyjnypiecowwedzarniczych/" target="_blank"> Przejdź do
+                serwisu </a> - Piece najwyższej jakiści
+            <br>
+            <img src="https://img.budgetshippingcontainers.co.uk/scam-299x270.jpg" alt="">
+        </div>
+        <div>
+            <p>
+                Jesteśmy tutaj
+            </p>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d254772.48575307758!2d108.127607!3d3.8487640000000005!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf85c592c8a4d0383!2stoko%20SISKA%20MANDIRI!5e0!3m2!1spl!2spl!4v1594368348543!5m2!1spl!2spl"
+                width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
+        </div>
+        <div id="slider">
+            Przykłady pieców
+            <button id="lewy">
+                < </button> <button id="prawy"> >
+            </button>
+        </div>
+    </main>
+</body>
+
+</html>
